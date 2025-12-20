@@ -91,8 +91,8 @@ namespace AchManager.AchievementTrigger
     {
       var jobMatches = Config.RequiredJob == Job.Any || (int)Player.Job == (int)Config.RequiredJob;
       var noTerritoryRestriction = Config.RequiredTerritories.Count == 0;
-      var territoryMatchesWhitelist = Config.TreatRequiredTerritoriesAsWhitelist && Config.RequiredTerritories.Contains(Player.Territory);
-      var territoryMatchesBlacklist = !Config.TreatRequiredTerritoriesAsWhitelist && !Config.RequiredTerritories.Contains(Player.Territory);
+      var territoryMatchesWhitelist = Config.TreatRequiredTerritoriesAsWhitelist && Config.RequiredTerritories.Contains(Player.Territory.RowId);
+      var territoryMatchesBlacklist = !Config.TreatRequiredTerritoriesAsWhitelist && !Config.RequiredTerritories.Contains(Player.Territory.RowId);
 
       return jobMatches && (noTerritoryRestriction || territoryMatchesWhitelist || territoryMatchesBlacklist);
     }

@@ -64,7 +64,7 @@ namespace AchManager.EventManager
         // check if target was a mark
         if (prevTarget.ObjectKind == Dalamud.Game.ClientState.Objects.Enums.ObjectKind.BattleNpc)
         {
-          var nm = GetNotoriousMonster(prevTarget.DataId);
+          var nm = GetNotoriousMonster(prevTarget.BaseId);
           if (nm.HasValue)
           {
             Svc.Log.Debug($"{nameof(MarkKilledEventManager)}: Fire ({nm.Value.BNpcName.Value.Singular})");

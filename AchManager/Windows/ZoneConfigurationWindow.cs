@@ -54,9 +54,9 @@ namespace AchManager.Windows
 
       ImGui.Separator();
       
-      if (ImGui.Button("Add current zone") && !_triggerConfig.RequiredTerritories.Contains(Player.Territory))
+      if (ImGui.Button("Add current zone") && !_triggerConfig.RequiredTerritories.Contains(Player.Territory.RowId))
       {
-        _triggerConfig.RequiredTerritories.Add(Player.Territory);
+        _triggerConfig.RequiredTerritories.Add(Player.Territory.RowId);
         Plugin.Configuration.Save();
       }
 
