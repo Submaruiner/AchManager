@@ -1,5 +1,5 @@
 {
-  "Author": "SHOEGAZEssb",
+  "Author": "Submaruiner",
   "Name": "AchManager",
   "Punchline": "Get notifications for achievement progress!",
   "Description": "Lets you watch achievements that will be checked for progress when certain things happen.",
@@ -7,7 +7,7 @@
   "Tags": [
     "achievements"
   ],
-  "RepoUrl": "https://github.com/SHOEGAZEssb/AchManager",
+  "RepoUrl": "https://github.com/Submaruiner/AchManager",
   "InternalName": "AchManager",
   "IconUrl": "",
   "ImageUrls": [
