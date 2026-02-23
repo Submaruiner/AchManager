@@ -1,4 +1,4 @@
-name: Create Release and Update Repository
+name: Create Release
 
 on:
   workflow_dispatch:
@@ -11,11 +11,35 @@ permissions:
 
 jobs:
   release:
-    uses: Submaruiner/DalamudPluginRepo/.github/workflows/reusable_create_release.yml@main
-    with:
-      internal_name: AchManager
-      solution_name: AchManager
-      build_configuration: Release
-      personal_plugin_repo: Submaruiner/DalamudPluginRepo
-      personal_plugin_repo_branch: main
-    secrets: inherit
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "10.0.x"
+
+      - name: Restore
+        run: dotnet restore AchManager.sln
+
+      - name: Build
+        run: dotnet build AchManager.sln -c Release --no-restore
+
+      - name: Package
+        shell: pwsh
+        run: |
+          $publishPath = Join-Path $PWD "AchManager/bin/x64/Release"
+          if (-not (Test-Path $publishPath)) {
+            throw "Build output not found: $publishPath"
+          }
+          Compress-Archive -Path "$publishPath/*" -DestinationPath "latest.zip" -Force
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: latest.zip
+          generate_release_notes: true
