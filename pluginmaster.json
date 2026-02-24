@@ -6,7 +6,7 @@
     "Description": "Lets you watch achievements that will be checked for progress when certain things happen.",
     "Changelog": "",
     "InternalName": "AchManager",
-    "AssemblyVersion": "1.6.0.1",
+    "AssemblyVersion": "1.6.0.2",
     "RepoUrl": "https://github.com/Submaruiner/AchManager",
     "ApplicableVersion": "any",
     "Tags": [
@@ -17,12 +17,12 @@
     "ImageUrls": [
       ""
     ],
-    "DownloadLinkInstall": "https://github.com/Submaruiner/AchManager/releases/download/v1.6.0.1/latest.zip",
+    "DownloadLinkInstall": "https://github.com/Submaruiner/AchManager/releases/download/v1.6.0.2/latest.zip",
     "IsHide": false,
     "IsTestingExclusive": false,
-    "DownloadLinkTesting": "https://github.com/Submaruiner/AchManager/releases/download/v1.6.0.1/latest.zip",
-    "DownloadLinkUpdate": "https://github.com/Submaruiner/AchManager/releases/download/v1.6.0.1/latest.zip",
+    "DownloadLinkTesting": "https://github.com/Submaruiner/AchManager/releases/download/v1.6.0.2/latest.zip",
+    "DownloadLinkUpdate": "https://github.com/Submaruiner/AchManager/releases/download/v1.6.0.2/latest.zip",
     "DownloadCount": 0,
-    "LastUpdate": "1771889832"
+    "LastUpdate": "1771893688"
   }
 ]
