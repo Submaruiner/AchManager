@@ -137,6 +137,7 @@ namespace AchManager
 
           Progress = e.Progress;
           ProgressMax = e.ProgressMax;
+          Plugin.Configuration.UpdateWatchedProgress(WatchedID, e.Progress, e.ProgressMax);
 
           if (Progress == ProgressMax)
             OnCompleted?.Invoke(this, e);
